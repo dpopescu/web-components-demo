@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@web-components-demo/lit-web-components": [
+        "libs/lit-web-components/src/index.ts"
+      ],
+      "@web-components-demo/web-components": [
+        "libs/web-components/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

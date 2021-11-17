@@ -1,4 +1,10 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "lit-web-components": "libs/lit-web-components",
+    "ng-app": "apps/ng-app",
+    "react-app": "apps/react-app",
+    "simple-app": "apps/simple-app",
+    "web-components": "libs/web-components"
+  }
 }
