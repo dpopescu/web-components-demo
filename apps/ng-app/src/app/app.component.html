@@ -1,6 +1,7 @@
-<app-layout>
-  <h1>Angular application</h1>
-  <p slot='footer'>This is the footer</p>
-  <page-header slot='header' (onButtonClick)="onHeaderButtonClick($event)">This is the header - Angular Application</page-header>
-  <p slot='sidebar'>This is the sidebar</p>
-</app-layout>
+<div>
+  <h1>Angular App</h1>
+  <my-element message='Angular App' (onDetailsClick)='clickHandler()'>
+    <my-element>Some value</my-element>
+    <h1 slot='details'>Details</h1>
+  </my-element>
+</div>

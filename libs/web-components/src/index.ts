@@ -1,9 +1,11 @@
-export * from './lib/app-layout';
+export * from './lib/my-element';
+export * from './lib/custom-button';
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'app-layout': any;
+      'my-element': any;
+      'custom-button': any;
     }
   }
 }

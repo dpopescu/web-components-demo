@@ -1,25 +1,26 @@
 import { useEffect, useRef } from 'react';
 
 export function App() {
-
-  const pageHeaderRef = useRef<HTMLElement>();
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(()=>{
-    pageHeaderRef.current?.addEventListener('onButtonClick', handleClickEvent);
-  }, [pageHeaderRef])
-
-  const handleClickEvent = (event:Event) => {
-    console.log(event);
-  }
+    btnRef.current?.addEventListener('click', ()=>{
+      alert('Button was clicked');
+    });
+    btnRef.current?.addEventListener('cancelled', ()=>{
+      alert('Button click was cancelled');
+    })
+  }, [btnRef])
 
   return (
-    <app-layout>
-      <h1>React application</h1>
-      <p slot='footer'>This is the footer</p>
-      <page-header slot='header' ref={pageHeaderRef}>This is the header - React Application
-      </page-header>
-      <p slot='sidebar'>This is the sidebar</p>
-    </app-layout>
+    <>
+      <h1>React Application</h1>
+      <my-element message={'A default Message'}>
+        One
+        <p slot='details'>Some details</p>
+      </my-element>
+      <button ref={btnRef} is='custom-button'>Click me</button>
+    </>
   );
 }
 

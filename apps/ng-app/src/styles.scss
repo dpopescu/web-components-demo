@@ -5,7 +5,6 @@ html, body, web-components-demo-root {
   padding: 0;
 }
 
-app-layout {
-  --page-text-color: white;
-  --header-button-font-size: 24px;
+body {
+  --heading-color: green;
 }

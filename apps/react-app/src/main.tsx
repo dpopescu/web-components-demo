@@ -1,5 +1,4 @@
 import '@web-components-demo/web-components';
-import '@web-components-demo/lit-web-components';
 
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ng-app';
 
-  onHeaderButtonClick(e: Event) {
-    console.log(e);
+  clickHandler() {
+    alert('clicked');
   }
 }

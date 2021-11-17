@@ -9,22 +9,46 @@
   <link rel='icon' type='image/x-icon' href='favicon.ico' />
 </head>
 <body>
-<script>
-  var onPageHeaderClick = function(e) {
-    console.log(e);
-  };
-</script>
-<app-layout>
-  <h1>Simple Web Application</h1>
-  <p slot='footer'>This is the footer</p>
-  <page-header id='pageHeader' slot='header'>
-    This is the header - Simple Web application
-  </page-header>
-  <p slot='sidebar'>This is the sidebar</p>
-</app-layout>
+<style>
+
+  h1 {
+    color: gray;
+  }
+
+  body {
+    --heading-color: green;
+  }
+
+  my-element.pink {
+    --heading-color: pink;
+  }
+
+</style>
+<h1>Simple Web App</h1>
+<my-element></my-element>
+<my-element class='pink'>
+  One
+  <p slot='details'>Extra info</p>
+</my-element>
+<my-element>
+  Two
+  <my-element slot='details'>9999</my-element>
+</my-element>
+<my-element id='customElement' message='Just a custom message'>
+  Three
+  <button is='custom-button' slot='details' onclick='clickHandler()'>Click me</button>
+</my-element>
 
 <script>
-  document.querySelector('#pageHeader').addEventListener('onButtonClick', onPageHeaderClick);
+
+  document.getElementById('customElement').addEventListener('onDetailsClick', e=>{
+    alert('Details link was clicked');
+  })
+
+  let clickHandler = function(){
+    document.getElementById('customElement').setAttribute('message', 'The message was changed');
+  }
+
 </script>
 </body>
 </html>
