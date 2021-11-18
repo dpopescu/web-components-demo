@@ -10,45 +10,29 @@
 </head>
 <body>
 <style>
-
   h1 {
     color: gray;
   }
 
   body {
-    --heading-color: green;
+    --heading-color: red;
   }
-
-  my-element.pink {
-    --heading-color: pink;
-  }
-
 </style>
+
 <h1>Simple Web App</h1>
-<my-element></my-element>
-<my-element class='pink'>
-  One
-  <p slot='details'>Extra info</p>
-</my-element>
-<my-element>
-  Two
-  <my-element slot='details'>9999</my-element>
-</my-element>
-<my-element id='customElement' message='Just a custom message'>
-  Three
-  <button is='custom-button' slot='details' onclick='clickHandler()'>Click me</button>
+
+<my-element id='custom' message='A simple message'>
+  <span>Some Content</span>
+  <p slot='secondary'>Secondary content</p>
 </my-element>
 
 <script>
-
-  document.getElementById('customElement').addEventListener('onDetailsClick', e=>{
-    alert('Details link was clicked');
-  })
-
-  let clickHandler = function(){
-    document.getElementById('customElement').setAttribute('message', 'The message was changed');
+  updateMessage = () => {
+    document.getElementById('custom').message = 'updated';
   }
-
 </script>
+
+<button onclick='updateMessage()'>update message</button>
+
 </body>
 </html>
